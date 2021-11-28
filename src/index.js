@@ -1,3 +1,4 @@
+require("dotenv").config();
 const Events = require("events");
 const { Application } = require("express");
 
@@ -16,14 +17,17 @@ module.exports = class Template {
      *  ProductModel: ProductModel,
      *  TransactionsModel: TransactionsModel,
      * }} models 
+     * @param {Object} Logger
      */
-    constructor(mainEvent, server, models) {
+    constructor(mainEvent, server, models, Logger) {
         // The event listner, which will be called when the event is emitted.
         this.mainEvent = mainEvent;
         // The express server.
         this.server = server;
         // The models for our database, like fetching from it or modified etc.
         this.models = models;
+        // The logger.
+        this.Logger = Logger;
 
         // Listen to a event and do a action.
         // Now we are lisitng to the event "invoice_paid" which is emitted when a invoice is paid.
