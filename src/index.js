@@ -16,6 +16,7 @@ module.exports = class Template {
      *  OrderModel: OrderModel,
      *  ProductModel: ProductModel,
      *  TransactionsModel: TransactionsModel,
+     *  ConfigurableOptionsModel: ConfigurableOptionsModel
      * }} models 
      * @param {Object} Logger
      */
