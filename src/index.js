@@ -19,8 +19,17 @@ module.exports = class Template {
      *  ConfigurableOptionsModel: ConfigurableOptionsModel
      * }} models 
      * @param {Object} Logger
+     * @param {{
+     *  Admin: CacheAdmin,
+     *  Customer: CacheCustomer,
+     *  Product: CacheProduct,
+     *  Transaction: CacheTransactions,
+     *  Order: CacheOrder,
+     *  Invoice: CacheInvoice,
+     *  f_orders: ce_orders
+     * }} MainCache
      */
-    constructor(mainEvent, server, models, Logger) {
+    constructor(mainEvent, server, models, Logger, MainCache) {
         // The event listner, which will be called when the event is emitted.
         this.mainEvent = mainEvent;
         // The express server.
