@@ -31,6 +31,7 @@ module.exports = class Template {
      * }} MainCache
      */
     constructor(mainEvent, server, models, Logger, MainCache) {
+        // Contains all events to listen to.
         _Events(mainEvent, server, models, Logger, MainCache);
         // The event listner, which will be called when the event is emitted.
         this.mainEvent = mainEvent;
@@ -40,11 +41,5 @@ module.exports = class Template {
         this.models = models;
         // The logger.
         this.Logger = Logger;
-
-        // Listen to a event and do a action.
-        // Now we are lisitng to the event "invoice_paid" which is emitted when a invoice is paid.
-        // returns invoice object.
-        
-
     }
 }
