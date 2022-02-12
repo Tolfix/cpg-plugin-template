@@ -4,12 +4,12 @@
   "description": "",
   "main": "./lib/src/index.js",
   "scripts": {
-    "build": "tsc --downlevelIteration",
+    "build": "tsc --project tsconfig.build.json",
     "fetch:submodules": "git submodule update --init --recursive",
     "fetch:submodules:update": "git submodule update --recursive --remote"
   },
   "keywords": [],
-  "author": "Tolfix",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^10.0.0"
