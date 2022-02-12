@@ -8,6 +8,14 @@
       "esModuleInterop": true,
       "resolveJsonModule": true,
       "strict": true,
+      "paths": {
+        "@cpg/*": [
+          "./cpg-api/src/*"
+        ],
+        "@interface/*": [
+          "./cpg-api/src/Interfaces/*"
+        ],
+      }
     },
     "exclude": ["./node_modules"],
     "include": [
@@ -15,4 +23,3 @@
       "./config.json"
     ]
 }
-  
