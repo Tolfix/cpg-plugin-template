@@ -91,6 +91,48 @@ export = async function main()
 }
 ```
 
+# 📝 | Custom payment methods
+If you want to create your own payment method for `CPG` there is a way.
+This might be useful if your plugin has a third party payment gateway that isn't added to `CPG` officialy yet.
+
+# ⚙ | Setup
+First of come up with a uniqe `payment_metod` name. This name will be used when proceeding on `orders/place`.
+
+## Setup | API
+Once a name has been decided, proceed to add it in `payment_methods` (v3/configs/payment_methods) in the API. This will ensure is accepted on checking and won't fail.
+
+## Setup | Plugin
+Now you need to create some methods to make this work, and import correct files to ensure it goes through without issues.
+You might also need to create custom routes, but we won't go through on this.
+
+```ts
+require("dotenv").config();
+const BuildDir = process.cwd() + "/build";
+// @ts-ignore
+import type { ce_orders as ce_orders_type } from "@cpg/Lib/Orders/PlaceOrder";
+// @ts-ignore
+import type { A_CC_Payments as A_CC_Payments_type } from "@cpg/Types/PaymentMethod";
+// @ts-ignore
+import type { sendEmail as sE } from "@cpg/Email/Send"
+import config from "../config.json";
+// Change name of the class.
+export = async function main()
+{
+    const ce_orders = (await import(`${BuildDir}/Lib/Orders/PlaceOrder`)).ce_orders as typeof ce_orders_type;
+    const A_CC_Payments = (await import(`${BuildDir}/Types/PaymentMethod`)).A_CC_Payments as typeof A_CC_Payments_type;
+
+    const payment_method_name = "steam" as const;
+    A_CC_Payments.push(payment_method_name);
+
+    // @ts-ignore
+    ce_orders.set(payment_method_name, (order, invoice, req, res, next) =>
+    {
+        // Handle order/invoice
+    });
+}
+
+```
+
 # 📢 | Contribute
 Want to contribute? Great! You can contribute by `forking` this repository, then make changes and make a `PR`!
 
