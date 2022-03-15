@@ -95,7 +95,7 @@ If you want to create your own payment method for `CPG` there is a way.
 This might be useful if your plugin has a third party payment gateway that isn't added to `CPG` officialy yet.
 
 # ⚙ | Setup
-First of come up with a uniqe `payment_metod` name. This name will be used when proceeding on `orders/place`.
+First of come up with a uniqe `payment_method` name. This name will be used when proceeding on `orders/place`.
 
 ## Setup | Plugin
 Now you need to create some methods to make this work, and import correct files to ensure it goes through without issues.
