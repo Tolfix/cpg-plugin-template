@@ -98,9 +98,6 @@ This might be useful if your plugin has a third party payment gateway that isn't
 # ⚙ | Setup
 First of come up with a uniqe `payment_metod` name. This name will be used when proceeding on `orders/place`.
 
-## Setup | API
-Once a name has been decided, proceed to add it in `payment_methods` (v3/configs/payment_methods) in the API. This will ensure is accepted on checking and won't fail.
-
 ## Setup | Plugin
 Now you need to create some methods to make this work, and import correct files to ensure it goes through without issues.
 You might also need to create custom routes, but we won't go through on this.
@@ -132,6 +129,9 @@ export = async function main()
 }
 
 ```
+
+## Setup | API
+Once a name has been decided, proceed to add it in `payment_methods` (v3/configs/payment_methods) in the API. This will ensure is accepted on checking and won't fail.
 
 # 📢 | Contribute
 Want to contribute? Great! You can contribute by `forking` this repository, then make changes and make a `PR`!
