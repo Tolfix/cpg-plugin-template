@@ -33,7 +33,6 @@ import type pm from "@cpg/Database/Models/Products.model";
 import type { sendEmail as sE } from "@cpg/Email/Send"
 import config from "../config.json";
 
-// Change name of the class.
 export = async function main()
 {
     const Logger = (await import(`${BuildDir}/Lib/Logger`)).default as ILoggingTypes;
@@ -109,10 +108,7 @@ const BuildDir = process.cwd() + "/build";
 import type { ce_orders as ce_orders_type } from "@cpg/Lib/Orders/PlaceOrder";
 // @ts-ignore
 import type { A_CC_Payments as A_CC_Payments_type } from "@cpg/Types/PaymentMethod";
-// @ts-ignore
-import type { sendEmail as sE } from "@cpg/Email/Send"
-import config from "../config.json";
-// Change name of the class.
+
 export = async function main()
 {
     const ce_orders = (await import(`${BuildDir}/Lib/Orders/PlaceOrder`)).ce_orders as typeof ce_orders_type;
